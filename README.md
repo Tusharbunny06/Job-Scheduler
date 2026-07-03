@@ -13,24 +13,7 @@ A robust, distributed background job scheduler built with FastAPI, PostgreSQL, a
 - **Resilience**: Workers send heartbeats. If a worker crashes, a Stale Job Reclaimer resets its jobs so they can be processed again.
 - **Comprehensive UI**: Live throughput graphs, execution history, logs, and queue configuration.
 
-## System Architecture
 
-```mermaid
-graph LR
-    UI["Frontend (React/Vite)"] --> |REST API| API["FastAPI Backend"]
-    
-    API --> |CRUD & Scheduling| DB[("PostgreSQL")]
-    
-    subgraph Background Services
-        Worker["Worker Process"]
-        Scheduler["Scheduler Daemon"]
-    end
-    
-    Worker --> |Polls Queue & Heartbeats| DB
-    Worker --> |Executes Jobs| Worker
-    
-    Scheduler --> |Crons, Retries, Reclaimer| DB
-```
 ## Getting Started
 
 ### 1. Prerequisites
