@@ -6,16 +6,16 @@ The Job Scheduler uses a robust, scalable architecture separated into distinct l
 
 ```mermaid
 graph TD
-    UI[Frontend (React/Vite)] --> |REST API| API[FastAPI Backend]
+    UI["Frontend (React/Vite)"] --> |REST API| API["FastAPI Backend"]
     
-    API --> |CRUD & Scheduling| DB[(PostgreSQL)]
+    API --> |CRUD & Scheduling| DB[("PostgreSQL")]
     
     subgraph Background Services
-        Worker[Worker Process] --> |Polls Queue| DB
+        Worker["Worker Process"] --> |Polls Queue| DB
         Worker --> |Executes Jobs| Worker
         Worker --> |Heartbeat| DB
         
-        Scheduler[Scheduler Daemon] --> |Cron Jobs| DB
+        Scheduler["Scheduler Daemon"] --> |Cron Jobs| DB
         Scheduler --> |Retry Promotion| DB
         Scheduler --> |Stale Job Reclaimer| DB
     end
