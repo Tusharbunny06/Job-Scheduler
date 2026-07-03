@@ -5,20 +5,20 @@ The Job Scheduler uses a robust, scalable architecture separated into distinct l
 ## High Level Architecture
 
 ```mermaid
-graph TD
+graph LR
     UI["Frontend (React/Vite)"] --> |REST API| API["FastAPI Backend"]
     
     API --> |CRUD & Scheduling| DB[("PostgreSQL")]
     
     subgraph Background Services
-        Worker["Worker Process"] --> |Polls Queue| DB
-        Worker --> |Executes Jobs| Worker
-        Worker --> |Heartbeat| DB
-        
-        Scheduler["Scheduler Daemon"] --> |Cron Jobs| DB
-        Scheduler --> |Retry Promotion| DB
-        Scheduler --> |Stale Job Reclaimer| DB
+        Worker["Worker Process"]
+        Scheduler["Scheduler Daemon"]
     end
+    
+    Worker --> |Polls Queue & Heartbeats| DB
+    Worker --> |Executes Jobs| Worker
+    
+    Scheduler --> |Crons, Retries, Reclaimer| DB
 ```
 
 ## Atomic Claiming Sequence
