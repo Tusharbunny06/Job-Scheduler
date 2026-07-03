@@ -1,6 +1,6 @@
 # Architecture
 
-The Codity Job Scheduler uses a robust, scalable architecture separated into distinct logical components.
+The Job Scheduler uses a robust, scalable architecture separated into distinct logical components.
 
 ## High Level Architecture
 

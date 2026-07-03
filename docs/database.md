@@ -1,6 +1,6 @@
 # Database ER Diagram
 
-The following Mermaid diagram maps out the relationships between tables in the Codity PostgreSQL database.
+The following Mermaid diagram maps out the relationships between tables in the PostgreSQL database.
 
 ```mermaid
 erDiagram

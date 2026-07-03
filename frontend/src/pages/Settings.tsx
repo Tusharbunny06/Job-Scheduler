@@ -47,7 +47,7 @@ export default function SettingsPage() {
   const [showTimestamps, setShowTimestamps] = useState(true);
 
   // API settings state
-  const [apiKey] = useState('sk-codity-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
+  const [apiKey] = useState('sk-job-scheduler-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
   const [webhookUrl, setWebhookUrl] = useState('');
 
   const handleSave = () => {

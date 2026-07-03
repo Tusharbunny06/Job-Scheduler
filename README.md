@@ -1,6 +1,6 @@
-# Codity Job Scheduler
+# Job Scheduler
 
-Codity is a robust, distributed background job scheduler built with FastAPI, PostgreSQL, and React. It provides functionality similar to Sidekiq, Celery, BullMQ, or AWS SQS.
+A robust, distributed background job scheduler built with FastAPI, PostgreSQL, and React. It provides functionality similar to Sidekiq, Celery, BullMQ, or AWS SQS.
 
 ## Features
 
